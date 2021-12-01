@@ -2,9 +2,9 @@
 
 ## Your Task
 
-Your assignment this week is emblematic of the fact that most modern websites are driven by two things: data and user demands. This shouldn't come as a surprise, as the ability to personalize user data is the cornerstone of real-world web development today. And as user demands evolve, applications need to be more performant.
+Your assignment this week is emblematic of the fact that most modern websites are driven by two things: data and user demands. This shouldnt come as a surprise, as the ability to personalize user data is the cornerstone of real-world web development today. And as user demands evolve, applications need to be more performant.
 
-This week, you’ll take starter code with a fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. It's already set up to allow users to save book searches to the back end. 
+This week, you’ll take starter code with a fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. Its already set up to allow users to save book searches to the back end. 
 
 To complete the assignment, you’ll need to do the following:
 
@@ -44,16 +44,16 @@ WHEN the toggle is set to Login
 THEN I am presented with two inputs for an email address and a password and login button
 WHEN I enter a valid email address and create a password and click on the signup button
 THEN my user account is created and I am logged in to the site
-WHEN I enter my account’s email address and password and click on the login button
+WHEN I enter my account  s email address and password and click on the login button
 THEN I the modal closes and I am logged in to the site
 WHEN I am logged in to the site
 THEN the menu options change to Search for Books, an option to see my saved books, and Logout
 WHEN I am logged in and enter a search term in the input field and click the submit button
-THEN I am presented with several search results, each featuring a book’s title, author, description, image, and a link to that book on the Google Books site and a button to save a book to my account
+THEN I am presented with several search results, each featuring a books title, author, description, image, and a link to that book on the Google Books site and a button to save a book to my account
 WHEN I click on the Save button on a book
-THEN that book’s information is saved to my account
+THEN that books information is saved to my account
 WHEN I click on the option to see my saved books
-THEN I am presented with all of the books I have saved to my account, each featuring the book’s title, author, description, image, and a link to that book on the Google Books site and a button to remove a book from my account
+THEN I am presented with all of the books I have saved to my account, each featuring the books title, author, description, image, and a link to that book on the Google Books site and a button to remove a book from my account
 WHEN I click on the Remove button on a book
 THEN that book is deleted from my saved books list
 WHEN I click on the Logout button
@@ -63,7 +63,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 ## Mock-Up
 
-Let's start by revisiting the web application's appearance and functionality.
+Lets start by revisiting the web applications appearance and functionality.
 
 As you can see in the following animation, a user can type a search term (in this case, "star wars") in a search box and the results appear:
 
@@ -75,14 +75,14 @@ The user can save books by clicking "Save This Book!" under each search result, 
 
 A user can view their saved books on a separate page, as shown in the following animation:
 
-![The Viewing Lernantino's Books page shows the books that the user Lernaninto has saved.](./Assets/21-mern-homework-demo-03.gif)
+![The Viewing Lernantinos Books page shows the books that the user Lernaninto has saved.](./Assets/21-mern-homework-demo-03.gif)
 
 
 ## Getting Started
 
 In order for this application to use a GraphQL API, you’ll need to refactor the API to use GraphQL on the back end and add some functionality to the front end. The following sections contain details about the files you’ll need to modify on the back end and the front end.
 
-**Important**: Make sure to study the application before building upon it. Better yet, start by making a copy of it. It's already a working application&mdash;you're converting it from RESTful API practices to a GraphQL API.
+**Important**: Make sure to study the application before building upon it. Better yet, start by making a copy of it. Its already a working application&mdash;youre converting it from RESTful API practices to a GraphQL API.
 
 ### Back-End Specifications
 
@@ -114,9 +114,9 @@ You’ll need to complete the following tasks in each of these back-end files:
 
 			* `addUser`: Accepts a username, email, and password as parameters; returns an `Auth` type.
 
-			* `saveBook`: Accepts a book author's array, description, title, bookId, image, and link as parameters; returns a `User` type. (Look into creating what's known as an `input` type to handle all of these parameters!)
+			* `saveBook`: Accepts a book authors array, description, title, bookId, image, and link as parameters; returns a `User` type. (Look into creating whats known as an `input` type to handle all of these parameters!)
 
-			* `removeBook`: Accepts a book's `bookId` as a parameter; returns a `User` type.
+			* `removeBook`: Accepts a books `bookId` as a parameter; returns a `User` type.
 			
 		* `User` type:
 
@@ -132,7 +132,7 @@ You’ll need to complete the following tasks in each of these back-end files:
 
 		* `Book` type:
 
-			* `bookId` (Not the `_id`, but the book's `id` value returned from Google's Book API.)
+			* `bookId` (Not the `_id`, but the books `id` value returned from Googles Book API.)
 
 			* `authors` (An array of strings, as there may be more than one author.)
 
@@ -153,7 +153,7 @@ You’ll need to complete the following tasks in each of these back-end files:
 
 ### Front-End Specifications
 
-You'll need to create the following front-end files:
+Youll need to create the following front-end files:
 
 * `queries.js`: This will hold the query `GET_ME`, which will execute the `me` query set up using Apollo Server.
 
@@ -176,7 +176,7 @@ Additionally, you’ll need to complete the following tasks in each of these fro
 
 	* Use the Apollo `useMutation()` Hook to execute the `SAVE_BOOK` mutation in the `handleSaveBook()` function instead of the `saveBook()` function imported from the `API` file.
 
-	* Make sure you keep the logic for saving the book's ID to state in the `try...catch` block! 
+	* Make sure you keep the logic for saving the books ID to state in the `try...catch` block! 
 
 * `SavedBooks.js`:
 
@@ -184,7 +184,7 @@ Additionally, you’ll need to complete the following tasks in each of these fro
 
 	* Instead, use the `useQuery()` Hook to execute the `GET_ME` query on load and save it to a variable named `userData`.
 
-	* Use the `useMutation()` Hook to execute the `REMOVE_BOOK` mutation in the `handleDeleteBook()` function instead of the `deleteBook()` function that's imported from `API` file. (Make sure you keep the `removeBookId()` function in place!)
+	* Use the `useMutation()` Hook to execute the `REMOVE_BOOK` mutation in the `handleDeleteBook()` function instead of the `deleteBook()` function thats imported from `API` file. (Make sure you keep the `removeBookId()` function in place!)
 
 * `SignupForm.js`: Replace the `addUser()` functionality imported from the `API` file with the `ADD_USER` mutation functionality.
 
